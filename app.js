@@ -44,15 +44,9 @@ function flush(){
 
 function collect(){
   var v = function(id){ return $(id).value.trim(); };
-  return [ v('fn'), v('ln'), v('em'), v('ph'), v('co'), v('wb'), v('li'), v('lo'), SD, platforms(), v('st'), v('fu') ];
+  return [ v('fn'), v('ln'), v('em'), v('ph'), v('co'), v('wb'), v('li'), v('lo'), SD, v('ch'), v('st'), v('fu') ];
 }
-
 function clear(){ ['co','fn','ln','em','ph','wb','li','lo','fu'].forEach(function(i){ $(i).value=''; }); }
-
-function platforms(){
-  return Array.from(document.querySelectorAll('#pf input:checked'))
-    .map(function(i){ return i.value; }).join(', ');
-}
 
 $('go').onclick = function(){
   var row = collect();
