@@ -8,7 +8,13 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(keys =>
     Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-  ).then(() => self.clients.claim()));
+  ).then(() => self.clients.claim()).then(() =>
+    self.clients.matchAll().then(cs => cs.forEach(c => c.postMessage({ cache: CACHE })))
+  ));
+});
+
+self.addEventListener('message', e => {
+  if (e.data && e.data.want === 'cache' && e.source) e.source.postMessage({ cache: CACHE });
 });
 
 self.addEventListener('fetch', e => {
@@ -23,3 +29,5 @@ self.addEventListener('fetch', e => {
     }).catch(() => caches.match('./index.html')))
   );
 });
+
+
