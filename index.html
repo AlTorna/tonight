@@ -1,0 +1,55 @@
+
+<div class="app">
+  <header>
+    <div class="k">TONIGHT · <span id="sd"></span></div>
+    <div class="count"><span id="n">0</span><small> / 5</small></div>
+    <div class="dots" id="dots"></div>
+    <div class="ep" id="ep">checking…</div>
+  </header>
+
+  <main>
+    <label for="co">Company</label>
+    <input id="co" autocomplete="organization">
+
+    <div class="two">
+      <div><label for="fn">First name</label><input id="fn" autocomplete="given-name"></div>
+      <div><label for="ln">Last name</label><input id="ln" autocomplete="family-name"></div>
+    </div>
+
+    <label for="em">Email</label>
+    <input id="em" type="email" inputmode="email" autocomplete="email">
+
+    <label for="ph">Phone</label>
+    <input id="ph" type="tel" inputmode="tel" autocomplete="tel">
+
+    <div class="two">
+      <div><label for="ch">Channel</label>
+        <select id="ch"><option>Email</option><option>DM</option><option>LinkedIn</option><option>Call</option><option>Other</option></select>
+      </div>
+      <div><label for="st">Status</label>
+        <select id="st"><option>Sent</option><option>Replied</option><option>No reply</option><option>Call booked</option><option>Dead</option></select>
+      </div>
+    </div>
+
+    <label for="fu">Next follow-up</label>
+    <input id="fu" type="date">
+
+    <details>
+      <summary>Website, LinkedIn, location</summary>
+      <label for="wb">Website</label><input id="wb" inputmode="url">
+      <label for="li">LinkedIn</label><input id="li" inputmode="url">
+      <label for="lo">Location</label><input id="lo">
+    </details>
+
+    <div class="note">Floor 5, never averaged. Raise to 7 after three clean nights under 04:00. AIC assignment before the shift. Decision gate 5 Dec.</div>
+  </main>
+
+  <footer>
+    <button class="log" id="go">Log contact</button>
+    <button class="install" id="inst">Install to home screen</button>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+
+
+
