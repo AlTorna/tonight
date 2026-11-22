@@ -1,5 +1,5 @@
-const CACHE = 'tonight-v5';
-const SHELL = ['./', './index.html', './manifest.webmanifest', './icon.svg'];
+const CACHE = 'tonight-v6';
+const SHELL = ['./', './index.html', './manifest.webmanifest', './icons.svg'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
