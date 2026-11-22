@@ -53,12 +53,9 @@ function clear(){ ['co','fn','ln','em','ph','wb','li','lo','fu'].forEach(functio
 
 $('go').onclick = function(){
   var row = collect();
-  if (!row[4] && !row[0]) { toast('company or name required', true); 
-  if (!validEmail(row[2])) { toast('valid email required', true); $('em').focus(); 
-  if (navigator.vibrate) navigator.vibrate([12,60,12]); return; } ;
-  if (navigator.vibrate) navigator.vibrate([12,60,12]); return; 
-  }
-  
+  if (!row[4] && !row[0]) { toast('company or name required', true); if (navigator.vibrate) navigator.vibrate([12,60,12]); return; }
+  if (!validEmail(row[2])) { toast('valid email required', true); $('em').focus(); if (navigator.vibrate) navigator.vibrate([12,60,12]); return; }
+
   queue.push(row); save(QK, queue);
   clear(); toast('queued'); if (navigator.vibrate) navigator.vibrate(10);
   flush();
