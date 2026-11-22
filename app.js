@@ -73,4 +73,13 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', function(){ navigator.serviceWorker.register('./sw.js'); });
 }
 
+var ver = $('ver');
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.addEventListener('message', function(e){
+    if (e.data && e.data.cache) ver.textContent = e.data.cache;
+  });
+  if (navigator.serviceWorker.controller)
+    navigator.serviceWorker.controller.postMessage({ want: 'cache' });
+}
+
 render(); flush();
