@@ -39,6 +39,10 @@
   .toast.bad { border-color:var(--err); color:var(--err); }
   .note { font-size:11px; color:var(--mut); line-height:1.6; margin-top:14px; }
   .install { display:none; width:100%; margin-top:8px; padding:11px; border-radius:8px; border:1px solid var(--line); background:transparent; color:var(--mut); font-family:inherit; font-size:12px; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+  .chip { display:inline-flex; align-items:center; gap:7px; padding:11px 14px; border:1px solid var(--line); border-radius:20px; font-size:13px; color:var(--fg); margin:0; }
+  .chip input { width:auto; margin:0; accent-color:var(--acc); }
+  .chip:has(input:checked) { border-color:var(--acc); color:var(--acc); }
 </style>
 </head>
 <script src="./app.js" defer>
@@ -57,10 +61,18 @@
     <label for="co">Company</label>
     <input id="co" autocomplete="organization">
 
-    <div class="two">
-      <div><label for="fn">First name</label><input id="fn" autocomplete="given-name"></div>
-      <div><label for="ln">Last name</label><input id="ln" autocomplete="family-name"></div>
+    <label>Platforms</label>
+    <div class="chips" id="pf">
+      <label class="chip"><input type="checkbox" value="YouTube"><span>YouTube</span></label>
+      <label class="chip"><input type="checkbox" value="Instagram"><span>Instagram</span></label>
+      <label class="chip"><input type="checkbox" value="Website"><span>Website</span></label>
+      <label class="chip"><input type="checkbox" value="LinkedIn"><span>LinkedIn</span></label>
+      <label class="chip"><input type="checkbox" value="X"><span>X</span></label>
+      <label class="chip"><input type="checkbox" value="TikTok"><span>TikTok</span></label>
     </div>
+
+    <label for="st">Status</label>
+    <select id="st"><option>Sent</option><option>Replied</option><option>No reply</option><option>Call booked</option><option>Dead</option></select>
 
     <label for="em">Email</label>
     <input id="em" type="email" inputmode="email" autocomplete="email">
