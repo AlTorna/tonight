@@ -1,4 +1,4 @@
-const CACHE = 'tonight-v6';
+const CACHE = 'tonight-v7';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icons.svg'];
 
 self.addEventListener('install', e => {
